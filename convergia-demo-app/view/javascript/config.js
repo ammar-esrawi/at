@@ -3,11 +3,11 @@
 
 //login apis and expiry value
 var login = {
-   redirectTarget: "/asset-tracking/view/html/index.html#/main",
+   redirectTarget: "/convergia-demo-app/view/html/index.html#/main",
    expiry:6,
-   loginTarget: "/asset-tracking/view/html/login.html",
-   loginApi: "/asset-tracking/api/login/login",
-   validateTokenApi: "/asset-tracking/api/login/validateToken"
+   loginTarget: "/convergia-demo-app/view/html/login.html",
+   loginApi: "/convergia-demo-app/api/login/login",
+   validateTokenApi: "/convergia-demo-app/api/login/validateToken"
 };
 
 //web sockets 

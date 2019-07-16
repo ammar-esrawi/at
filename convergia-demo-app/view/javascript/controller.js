@@ -74,7 +74,7 @@ myApp.controller('dashboardCtrl', function($scope, $timeout, wsClient, httpClien
             
             wsClient.subscribe(vm.msgTag, vm.consumeData.bind(vm), $scope.$id);  
             
-            httpClient.get("asset-tracking/api/latestevents", vm.params).then(
+            httpClient.get("convergia-demo-app/api/latestevents", vm.params).then(
                 function(data, response) {
                 	vm.consumeData(data)
                 },

@@ -6,7 +6,7 @@
 
 var http = require("http");
 var device = require("device");
-var config = require("asset-tracking/entities/config")
+var config = require("convergia-demo-app/entities/config")
 
 var id = request.parameters["id"] || "demo"; 
 var password = request.parameters["password"] || "demo";

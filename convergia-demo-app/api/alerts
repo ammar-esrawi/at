@@ -7,7 +7,7 @@
 *
 */
 
-var deviceManager=require("asset-tracking/entities/deviceManager");
+var deviceManager=require("convergia-demo-app/entities/deviceManager");
 //Ingest the request params or data
 var requestParams = request.body || request.parameters;
 

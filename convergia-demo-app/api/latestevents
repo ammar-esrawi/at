@@ -8,8 +8,8 @@
 *
 */
 
-var deviceManager=require("asset-tracking/entities/deviceManager");
-var utils = require("asset-tracking/entities/utils");
+var deviceManager=require("convergia-demo-app/entities/deviceManager");
+var utils = require("convergia-demo-app/entities/utils");
 
 //Ingest the request params or data
 var requestParams = request.body || request.parameters;

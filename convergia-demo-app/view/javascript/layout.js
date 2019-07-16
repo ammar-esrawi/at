@@ -19,10 +19,10 @@ var headerItems = {
 //angular js routs
 var routingItems = {
   "params": [
-    {"route": "/", "template": "/asset-tracking/view/html/views/main/main.html", "controller": "mapCtrl as vm"},
-    {"route": "main", "template": "/asset-tracking/view/html/views/main/main.html", "controller": "mapCtrl as vm"},
-    {"route": "dashboard/deviceId/:deviceId*", "template": "/asset-tracking/view/html/views/main/dashboard.html","controller": "dashboardCtrl as vm"},
-    {"route": "alerts", "template": "/asset-tracking/view/html/views/alerts/alerts.html"},
-    {"route": "logout", "template": "/asset-tracking/view/html/logout.html"}
+    {"route": "/", "template": "/convergia-demo-app/view/html/views/main/main.html", "controller": "mapCtrl as vm"},
+    {"route": "main", "template": "/convergia-demo-app/view/html/views/main/main.html", "controller": "mapCtrl as vm"},
+    {"route": "dashboard/deviceId/:deviceId*", "template": "/convergia-demo-app/view/html/views/main/dashboard.html","controller": "dashboardCtrl as vm"},
+    {"route": "alerts", "template": "/convergia-demo-app/view/html/views/alerts/alerts.html"},
+    {"route": "logout", "template": "/convergia-demo-app/view/html/logout.html"}
   ]
 };

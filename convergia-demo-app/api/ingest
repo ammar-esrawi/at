@@ -13,10 +13,10 @@
 *
 */
 
-var deviceManager=require("asset-tracking/entities/deviceManager");
-var alertManager=require("asset-tracking/entities/alertManager");
-var notificationManager=require("asset-tracking/entities/notificationManager");
-var utils=require("asset-tracking/entities/utils");
+var deviceManager=require("convergia-demo-app/entities/deviceManager");
+var alertManager=require("convergia-demo-app/entities/alertManager");
+var notificationManager=require("convergia-demo-app/entities/notificationManager");
+var utils=require("convergia-demo-app/entities/utils");
 var log = require("log");
 log.setLevel("INFO");
 try{

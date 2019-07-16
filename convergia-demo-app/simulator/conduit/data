@@ -18,7 +18,7 @@ if(listSubdomainsResult.metadata && listSubdomainsResult.metadata.status == "suc
     if(listSubdomainsResult.result && listSubdomainsResult.result.subdomains &&listSubdomainsResult.result.subdomains.length > 0) {
         
         //Build the url of the ingest api
-        const  api= "https://"+ listSubdomainsResult.result.subdomains[0].name + ".scriptrapps.io/asset-tracking/api/ingest";
+        const  api= "https://"+ listSubdomainsResult.result.subdomains[0].name + ".scriptrapps.io/convergia-demo-app/api/ingest";
         
         var devices = [{id:'xh2345', lat: "40.7411", long: "-73.9816"}, {id:'mf2345',  lat: "40.74", long: "-73.9899"}, {id:'yz2345',  lat: "40.7419", long: "-73.9892"}];
         var randomDevice = devices[Math.floor(Math.random() * devices.length)]
@@ -53,7 +53,7 @@ if(listSubdomainsResult.metadata && listSubdomainsResult.metadata.status == "suc
         return "No subdomain set for your account. Please setup a subdomain in order to run the simulator.";
     }
 } else {
-    	return "Unable to call the quick start application [\"/asset-tracking/api/ingest\"] api. Failure to load your account subdomain property."
+    	return "Unable to call the quick start application [\"/convergia-demo-app/api/ingest\"] api. Failure to load your account subdomain property."
 }
 
 /**

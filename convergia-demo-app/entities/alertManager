@@ -4,11 +4,11 @@
 *
 */
 
-var apply = require("asset-tracking/entities/rules/apply");
-var deviceManager = require("asset-tracking/entities/deviceManager");
-var notificationManager=require("asset-tracking/entities/notificationManager");
-var mailer = require("asset-tracking/entities/helper/mail/mailer");
-var templates=require("asset-tracking/entities/helper/mail/templates");
+var apply = require("convergia-demo-app/entities/rules/apply");
+var deviceManager = require("convergia-demo-app/entities/deviceManager");
+var notificationManager=require("convergia-demo-app/entities/notificationManager");
+var mailer = require("convergia-demo-app/entities/helper/mail/mailer");
+var templates=require("convergia-demo-app/entities/helper/mail/templates");
 var _ = require("modules/underscore/underscore.js")._;
 var log = require("log");
 log.setLevel("INFO");

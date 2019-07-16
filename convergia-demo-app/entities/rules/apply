@@ -4,7 +4,7 @@
 * @module apply
 *
 */
-var utils = require("asset-tracking/entities/utils");
+var utils = require("convergia-demo-app/entities/utils");
 var log = require("log");
 log.setLevel("INFO");
 
@@ -22,7 +22,7 @@ function process(rule, data) {
 
     try {
 
-        var result = utils.executeDecisionTable("asset-tracking/entities/rules/" + rule, data);
+        var result = utils.executeDecisionTable("convergia-demo-app/entities/rules/" + rule, data);
 
         return result;
 

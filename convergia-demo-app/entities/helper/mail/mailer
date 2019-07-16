@@ -6,8 +6,8 @@
 *
 */
 
-var templates = require("asset-tracking/entities/helper/mail/templates");
-var config = require("asset-tracking/entities/config");
+var templates = require("convergia-demo-app/entities/helper/mail/templates");
+var config = require("convergia-demo-app/entities/config");
 var _ = require("modules/underscore/underscore.js")._;
 
 var log = require("log");
