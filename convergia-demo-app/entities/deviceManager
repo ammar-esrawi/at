@@ -12,14 +12,14 @@ var document = require("document");
 var log = require("log");
 log.setLevel("INFO");
 
-// Get an instance of your custom store called "multitech"
-var multitechStore = document.getInstance("multitech");
+// Get an instance of your custom store called "convergia"
+var convergiaStore = document.getInstance("convergia");
 
 
 // schemas names
-var event_schema="multitech_event";
-var alert_schema="multitech_alert";
-var latest_event_schema="multitech_latest_event";
+var event_schema="convergia_event";
+var alert_schema="convergia_alert";
+var latest_event_schema="convergia_latest_event";
 
 
 /**
@@ -36,7 +36,7 @@ function deleteDevice(id) {
     }
     var data=getDeviceData(id);
     for(var x in data){
-        multitechStore.delete(x.key);
+        convergiaStore.delete(x.key);
     }
 }
 
@@ -64,7 +64,7 @@ function createDeviceAlert(entry) {
     }
 
     entry["meta.schema"]=alert_schema;
-    return multitechStore.create(entry) ;
+    return convergiaStore.create(entry) ;
 }
 /**
 *
@@ -94,7 +94,7 @@ function saveDeviceLatestEvent(entry){
     }
     latestEvent["meta.schema"] = latest_event_schema;
     latestEvent.key = latest_event_schema+"_"+latestEvent.id;
-    var latesteventUpdated=multitechStore.save(latestEvent);
+    var latesteventUpdated=convergiaStore.save(latestEvent);
 	 if(!latesteventUpdated || ( latesteventUpdated.metadata.status!="success")){
         log.error("update latest event error : "+ JSON.stringify( latesteventUpdated));
     }
@@ -126,7 +126,7 @@ function createDeviceEvent(entry) {
     saveDeviceLatestEvent(entry);
     
     entry["meta.schema"]=event_schema;
-    return multitechStore.create(entry) ;
+    return convergiaStore.create(entry) ;
 }
 
 /**
@@ -143,7 +143,7 @@ function getDeviceData(id){
     if(!id){
         throw "id is empty"
     }
-    var result = multitechStore.query({"query":'id="'+id+'"',fields:"*"});
+    var result = convergiaStore.query({"query":'id="'+id+'"',fields:"*"});
     if(result && result.metadata.status=="success"){
         return result.result.documents;
     } else{
@@ -166,7 +166,7 @@ function getDeviceEvents(id){
     if(!id){
         throw "id is empty"
     }
-    var result = multitechStore.query(
+    var result = convergiaStore.query(
         {"query":'id="'+id+'" and schema = "'+event_schema+'"',fields:"*"}
     );
     if(result && result.metadata.status=="success"){
@@ -185,7 +185,7 @@ function getDeviceEvents(id){
 */
 function getAllEvents(){
     
-    var result = multitechStore.query(
+    var result = convergiaStore.query(
         {"query":'schema = "'+event_schema+'"',fields:"*"}
     );
     if(result && result.metadata.status=="success"){
@@ -208,7 +208,7 @@ function getDeviceAlerts(id){
      if(!id){
         throw "id is empty"
     }
-    var result = multitechStore.query(
+    var result = convergiaStore.query(
         {"query":'id="'+id+'" and schema = "'+alert_schema+'"',fields:"*"}
     );
     if(result && result.metadata.status=="success"){
@@ -231,7 +231,7 @@ function getDeviceLatestEvent(id){
     if(!id){
         throw "id is empty"
     }
-    var result = multitechStore.query(
+    var result = convergiaStore.query(
         {"query":'id="'+id+'" and schema = "'+latest_event_schema+'"',fields:"*"}
     );
     if(result && result.metadata.status=="success"){
@@ -250,7 +250,7 @@ function getDeviceLatestEvent(id){
 */
 function getAllLatestEvents(){
     
-    var result = multitechStore.query(
+    var result = convergiaStore.query(
         {"query":'schema = "'+latest_event_schema+'"',fields:"*"}
     );
     if(result && result.metadata.status=="success"){
@@ -269,7 +269,7 @@ function getAllLatestEvents(){
 */
 function getAllAlerts(resultsPerPage, pageNumber){
     
-    var result = multitechStore.query(
+    var result = convergiaStore.query(
         {"query":'schema = "'+alert_schema+'"',fields:"*", "resultsPerPage": resultsPerPage, "pageNumber": pageNumber}
     );
     if(result && result.metadata.status=="success"){
@@ -284,7 +284,7 @@ function searchAlerts(id, resultsPerPage, pageNumber){
      if(!id){
         throw "id is empty"
     }
-    var result = multitechStore.query(
+    var result = convergiaStore.query(
         {"query":'id like "'+id+'%" and schema = "'+alert_schema+'"',fields:"*", "resultsPerPage": resultsPerPage, "pageNumber": pageNumber}
     );
     if(result && result.metadata.status=="success"){
