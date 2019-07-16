@@ -10,6 +10,7 @@ var stores = require("store");
 var schema = require("schema");
 var devices = require("device");
 var subdomain = require("subdomain");
+var configuration = require("configuration");
 
 /** REMOVE ADVANCED APP CREATED CHANNELS **/
 var channels =  ["responseChannel", "requestChannel"];

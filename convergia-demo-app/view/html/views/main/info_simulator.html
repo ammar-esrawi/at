@@ -17,23 +17,74 @@
        <div class="clearfix mb10"></div>
        
        <div class="col-xs-12 col-sm-4 text-center">
-              <div class="icon bg-green" ng-bind-html="summaryIcons.temperature">
+              <div class="icon bg-green" ng-bind-html="summaryIcons.TC">
               </div>
-              <div class="nb bold">{{marker.details.temperature.value || "N/A"}} Celsius </div>
-              <small>Temperature</small>
+              <div class="nb bold">{{marker.details.TC.value || "N/A"}} Celsius </div>
+              <small>TC</small>
        </div>
 
        <div class="col-xs-12 col-sm-4 text-center">
               <div class="icon bg-yellow" ng-bind-html="summaryIcons.light">
               </div>
-              <div class="nb bold">{{marker.details.luminosity.value || "N/A"}} Lux</div>
-              <small>Luminosity</small>
+              <div class="nb bold">{{marker.details.BAT.value || "N/A"}} Lux</div>
+              <small>BAT</small>
        </div>
        <div class="col-xs-12 col-sm-4 text-center">
               <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
               </div>
-              <div class="nb bold">{{marker.details.pressure.value || "N/A"}} Pascal</div>
-              <small>Pressure</small>
+              <div class="nb bold">{{marker.details.PLV1.value || "N/A"}} Pascal</div>
+              <small>PLV1</small>
+       </div>
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.PLV1.value || "N/A"}} Pascal</div>
+              <small>PLV1</small>
+       </div>
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.PLV2.value || "N/A"}} Pascal</div>
+              <small>PLV2</small>
+       </div>
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.PLV3.value || "N/A"}} Pascal</div>
+              <small>PLV3</small>
+       </div>
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.SOIL2.value || "N/A"}} Pascal</div>
+              <small>SOIL2</small>
+       </div>
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.ANE.value || "N/A"}} Pascal</div>
+              <small>ANE</small>
+    
+          </div>
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.STR.value || "N/A"}} Pascal</div>
+              <small>STR</small>
+       </div>
+
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.PRES.value || "N/A"}} Pascal</div>
+              <small>PRES</small>
+       </div>
+
+           <div class="col-xs-12 col-sm-4 text-center">
+              <div class="icon bg-purple" ng-bind-html="summaryIcons.pressure">
+              </div>
+              <div class="nb bold">{{marker.details.HUM.value || "N/A"}} Pascal</div>
+              <small>HUM</small>
        </div>
     </section>  
     
