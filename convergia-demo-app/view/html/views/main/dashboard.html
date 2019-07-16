@@ -71,7 +71,7 @@
              <li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 1 , row: 0 }'>
                  <div class="box">
                      <div class="box-content">
-                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Battery" class="box-label">Luminosity</div>
+                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Battery" class="box-label">Battery</div>
                          <div  style="height: calc(100% - 30px)" > 
                              <scriptr-gauge
                                             boxLabel='Battery'
@@ -119,11 +119,62 @@
              <li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 2 , row: 0 }'>
                  <div class="box">
                      <div class="box-content">
-                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Humidity" class="box-label">Pressure</div>
+                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Humidity" class="box-label">Humidity</div>
                          <div  style="height: calc(100% - 30px)" > 
                              <scriptr-gauge
                                             boxLabel='Humidity'
                                             gauge-value='vm.selectedDevice.HUM.value'
+                                            value-font-color='#999'
+                                            min='0'
+                                            max='100'
+                                            hide-min-max='false'
+                                            hide-value='false'
+                                            show-inner-shadow='false'
+                                            custom-sectors='{"percents":"false","ranges":[{}]}'
+                                            shadow-size='5'
+                                            shadow-opacity='0.2'
+                                            start-animation-type='bounce'
+                                            refresh-animation-type='bounce'
+                                            value-font-family='Verdana'
+                                            value-min-font-size='8'
+                                            label-min-font-size='8'
+                                            min-label-min-font-size='8'
+                                            max-label-min-font-size='8'
+                                            gauge-width-scale='1'
+                                            shadow-vertical-offset='3'
+                                            level-colors='["#1877dd","#fce94f","#fcaf3e","#ef2929"]'
+                                            relative-gauge-size='true'
+                                            no-gradient='false'
+                                            start-animation-time='700'
+                                            refresh-animation-time='700'
+                                            donut='false'
+                                            donut-start-angle='90'
+                                            reverse='false'
+                                            decimals='0'
+                                            format-number='false'
+                                            human-friendly='false'
+                                            human-friendly-decimal='0'
+                                            pointer='true'
+                                            counter='false'
+                                            http-method='GET'
+                                            symbol=''
+                                            on-format-data='vm.pressureFormatData'
+                                            ></scriptr-gauge>
+                         </div>
+                     </div>
+                 </div>
+             </li>
+             
+            
+             
+             <li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 2 , row: 0 }'>
+                 <div class="box">
+                     <div class="box-content">
+                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Soil moisture" class="box-label">Soil moisture</div>
+                         <div  style="height: calc(100% - 30px)" > 
+                             <scriptr-gauge
+                                            boxLabel='Soil moisture'
+                                            gauge-value='vm.selectedDevice.SOIL2.value'
                                             value-font-color='#999'
                                             min='0'
                                             max='100'
@@ -177,7 +228,7 @@
                                             type='line'
                                             boxLabel='Temperature'
                                             xkey='creationDate'
-                                            ykeys='["temperature"]'
+                                            ykeys='["TC"]'
                                             labels='["Temperature"]'
                                             colors='["#F44336"]'
                                             transport='wss'
