@@ -21,14 +21,14 @@ var decision = [];
 if(typeof pl != "object") {
   return[];
 } else { 
-	  if((pl != null && pl["temperature"] != undefined && pl["temperature"] >35) && isAny("luminosity") && isAny("pressure")){
+	  if((pl != null && pl["TC"] != undefined && pl["TC"] >35) && isAny("BAT")){
        decision.push({ "log": "true","email": "high_temperature" });
 	} 
-	  if(isAny("temperature") && (pl != null && pl["luminosity"] != undefined && pl["luminosity"] >15000) && isAny("pressure")){
-       decision.push({ "log": "true","email": "high_luminosity" });
+	  if((pl != null && pl["TC"] != undefined && pl["TC"] <5) && isAny("BAT")){
+       decision.push({ "log": "true","email": "low_temperature" });
 	} 
-	  if(isAny("temperature") && isAny("luminosity") && (pl != null && pl["pressure"] != undefined && pl["pressure"] >110000)){
-       decision.push({ "log": "false","email": "high_pressure" });
+	  if(isAny("TC") && (pl != null && pl["BAT"] != undefined && pl["BAT"] <15)){
+       decision.push({ "log": "false","email": "low_battery" });
 	} 
 }
 //RULES EVALUATION END

@@ -19,7 +19,7 @@ if (listSubdomainsResult.metadata && listSubdomainsResult.metadata.status == "su
 
         //Build the url of the ingest api
         const api = "https://" + listSubdomainsResult.result.subdomains[0].name + ".scriptrapps.io/convergia-demo-app/api/ingest";
-
+				log.info("Generated Ingest API : " + JSON.stringify(api));
         var devices = [{ id: '2345', lat: "40.7411", long: "-73.9816" }, { id: '1345', lat: "40.74", long: "-73.9899" }, { id: '0345', lat: "40.7419", long: "-73.9892" }];
         var values = ["TC",
             "BAT",
