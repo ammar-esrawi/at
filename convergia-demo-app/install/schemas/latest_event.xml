@@ -6,6 +6,7 @@
             <fields>
                 <field>id</field>
                 <field>id_wasp</field>
+                <field>id_secret</field>
                 <field>location</field>
                 <field>TC</field>
                 <field>BAT</field>
@@ -34,6 +35,7 @@
     <fields>
         <field name='id' type='string'></field>
         <field name='id_wasp' type='string'></field>
+        <field name='id_secret' type='string'></field>
         <field name='location' type='geospatial'></field>
         <field name='TC' type='numeric'></field>
         <field name='BAT' type='numeric'></field>
