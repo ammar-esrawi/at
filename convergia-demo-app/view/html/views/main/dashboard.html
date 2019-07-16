@@ -269,14 +269,14 @@
              <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 0 , row: 2 }'>
                  <div class="box">
                      <div class="box-content">
-                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Pressure" class="box-label">Pressure</div>
+                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Battery" class="box-label">Battery</div>
                          <div  style="height: calc(100% - 30px)" > 
                              <scriptr-chart
                                             type='line'
-                                            boxLabel='Pressure'
+                                            boxLabel='Battery'
                                             xkey='creationDate'
-                                            ykeys='["pressure"]'
-                                            labels='["Pressure"]'
+                                            ykeys='["BAT"]'
+                                            labels='["Battery"]'
                                             colors='["#2196F3"]'
                                             transport='wss'
                                             msg-tag='{{vm.msgTag}}'
@@ -315,14 +315,61 @@
              <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 0 , row: 2 }'>
                  <div class="box">
                      <div class="box-content">
-                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Luminosity" class="box-label">Luminosity</div>
+                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Humidity" class="box-label">Humidity</div>
                          <div  style="height: calc(100% - 30px)" > 
                              <scriptr-chart
                                             type='line'
-                                            boxLabel='Luminosity'
+                                            boxLabel='Humidity'
                                             xkey='creationDate'
-                                            ykeys='[ "luminosity"]'
-                                            labels='[ "Luminosity"]'
+                                            ykeys='[ "HUM"]'
+                                            labels='[ "Humidity"]'
+                                            colors='["#4CAF50"]'
+                                            transport='wss'
+                                            msg-tag='{{vm.msgTag}}'
+                                            api="convergia-demo-app/api/historicalevents"
+                                            api-params="vm.params"
+                                            grid-text-family='Verdana'
+                                            line-width='3'
+                                            point-size='5'
+                                            point-stroke-colors='["rgb(46, 47, 44)"]'
+                                            ymax='auto'
+                                            ymin='auto 0'
+                                            smooth='false'
+                                            hide-hover='auto'
+                                            parse-time='true'
+                                            xlabels='auto'
+                                            xlabel-angle='0'
+                                            goal-stroke-width='1'
+                                            goal-line-colors='["#666633","#999966","#cc6666","#663333"]'
+                                            event-stroke-width='1'
+                                            event-line-colors='["#005a04","#ccffbb","#3a5f0b","#005502"]'
+                                            axes='true'
+                                            grid='true'
+                                            grid-text-color='#1f211d'
+                                            grid-text-size='12'
+                                            grid-text-weight='normal'
+                                            point-fill-colors='["#4550b1"]'
+                                            goals='[null]'
+                                            events='[null]'
+                                            parse-time="true"
+                                            on-format-data='vm.historicalFormatData'
+                                            ></scriptr-chart>
+                         </div>
+                     </div>
+                 </div>
+             </li>
+             
+             <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 0 , row: 2 }'>
+                 <div class="box">
+                     <div class="box-content">
+                         <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Soil moisture" class="box-label">Soil moisture</div>
+                         <div  style="height: calc(100% - 30px)" > 
+                             <scriptr-chart
+                                            type='line'
+                                            boxLabel='Soil moisture'
+                                            xkey='creationDate'
+                                            ykeys='[ "SOIL2"]'
+                                            labels='[ "Soil moisture"]'
                                             colors='["#4CAF50"]'
                                             transport='wss'
                                             msg-tag='{{vm.msgTag}}'
