@@ -75,7 +75,7 @@ if (listSubdomainsResult.metadata && listSubdomainsResult.metadata.status == "su
 */
 function getRandomValue(val) {
     return getRandomInt(0,100);//TODO Implement Simulation consest data samples
-
+}
 /**
 * Random Int limits included
 * 
