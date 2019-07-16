@@ -23,19 +23,29 @@ try{
     //Ingest the request params or data
     var requestParams = request.body || request.parameters;
     //prepare the data obj
-    
+
     log.info("requestParams : "+JSON.stringify( requestParams));
     var data = {
         id:requestParams.id,
-        temperature: requestParams.temperature,
-        luminosity: requestParams.luminosity,
-        pressure:requestParams.pressure,
+        id_wasp:requestParams.id_wasp,
+        TC: requestParams.TC,
+        BAT: requestParams.BAT,
+        PLV1: requestParams.PLV1,
+        PLV2: requestParams.PLV2,
+        PLV3: requestParams.PLV3,
+        SOIL2: requestParams.SOIL2,
+        ANE: requestParams.ANE,
+        STR: requestParams.STR,
+        PRES:requestParams.PRES,
+        HUM:requestParams.HUM,
         location:""
 
     }
     //build valid location if location not empty in params 
     if(isNumeric(requestParams.location.lat) && isNumeric(requestParams.location.lon)){
         data.location=""+parseFloat(requestParams.location.lat).toFixed(4)+ "," +parseFloat(requestParams.location.lon).toFixed(4)
+    }else{
+        data.location="";//TODO FETCH FROM CONFIGURATION
     }
     
     //load latest event 
@@ -44,9 +54,17 @@ try{
     
     //fill missing data from the latest event sent by the device
     data.location=data.location||latestEvent.location;
-    data.temperature=data.temperature||latestEvent.temperature||0;
-    data.luminosity=data.luminosity||latestEvent.luminosity||0;
-    data.pressure=data.pressure||latestEvent.pressure||0;
+    data.id_wasp=data.id_wasp||latestEvent.id_wasp||"";
+    data.TC=data.TC||latestEvent.TC||0;
+    data.BAT=data.BAT||latestEvent.BAT||0;
+    data.PLV1=data.PLV1||latestEvent.PLV1||0;
+    data.PLV2=data.PLV2||latestEvent.PLV2||0;
+    data.PLV3=data.PLV3||latestEvent.PLV3||0;
+    data.SOIL2=data.SOIL2||latestEvent.SOIL2||0;
+    data.ANE=data.ANE||latestEvent.ANE||0;
+    data.STR=data.STR||latestEvent.STR||0;
+    data.PRES=data.PRES||latestEvent.PRES||0;
+    data.HUM=data.HUM||latestEvent.HUM||0;
     
     //if not location defined then delete it
     if(!data.location){

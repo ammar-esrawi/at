@@ -12,49 +12,69 @@ var log = require("log");
 log.setLevel("INFO");
 
 // Load user subdomains
-var listSubdomainsResult =   subdomain.list();
+var listSubdomainsResult = subdomain.list();
 
-if(listSubdomainsResult.metadata && listSubdomainsResult.metadata.status == "success") {
-    if(listSubdomainsResult.result && listSubdomainsResult.result.subdomains &&listSubdomainsResult.result.subdomains.length > 0) {
-        
+if (listSubdomainsResult.metadata && listSubdomainsResult.metadata.status == "success") {
+    if (listSubdomainsResult.result && listSubdomainsResult.result.subdomains && listSubdomainsResult.result.subdomains.length > 0) {
+
         //Build the url of the ingest api
-        const  api= "https://"+ listSubdomainsResult.result.subdomains[0].name + ".scriptrapps.io/convergia-demo-app/api/ingest";
-        
-        var devices = [{id:'xh2345', lat: "40.7411", long: "-73.9816"}, {id:'mf2345',  lat: "40.74", long: "-73.9899"}, {id:'yz2345',  lat: "40.7419", long: "-73.9892"}];
-        var randomDevice = devices[Math.floor(Math.random() * devices.length)]
+        const api = "https://" + listSubdomainsResult.result.subdomains[0].name + ".scriptrapps.io/convergia-demo-app/api/ingest";
+
+        var devices = [{ id: '2345', lat: "40.7411", long: "-73.9816" }, { id: '1345', lat: "40.74", long: "-73.9899" }, { id: '0345', lat: "40.7419", long: "-73.9892" }];
+        var values = ["TC",
+            "BAT",
+            "PLV1",
+            "PLV2",
+            "PLV3",
+            "SOIL2",
+            "ANE",
+            "STR",
+            "PRES",
+            "HUM",];
+        var randomDevice = devices[Math.floor(Math.random() * devices.length)];
+        var randomValue = values[Math.floor(Math.random() * values.length)];
         //Generate random data to simulate the device data
         var dataSnap =
-            {
-                "id": randomDevice.id,
-                "temperature": 40,//getRandomInt(0,50),
-                "luminosity": getRandomArbitrary(0,30000),
-                "pressure": getRandomInt(0,140000),
-                "location":{
-                    "lat": randomDevice.lat,
-                    "lon": randomDevice.long
-                },
-                "gps_status": getRandomInt(0,1)
-            };
-        log.info("Generated Data : "+ JSON.stringify(dataSnap));
-        
+        {
+            "id": randomDevice.id,
+            
+            "location": {
+                "lat": randomDevice.lat,
+                "lon": randomDevice.long
+            }
+        };
+        dataSnap[randomValue]=getRandomValue(randomValue);
+        log.info("Generated Data : " + JSON.stringify(dataSnap));
+
         //Call the ingest api, with randomly generated data
         var callResult = http.request({
-            "url" : api,
-            "method":"POST",
-            "bodyString":JSON.stringify(dataSnap),
-            "headers":{
-                "Content-Type":"application/json"
+            "url": api,
+            "method": "POST",
+            "bodyString": JSON.stringify(dataSnap),
+            "headers": {
+                "Content-Type": "application/json"
             }
         });
-        
+
         return [callResult, dataSnap];
-        
+
     } else {
         return "No subdomain set for your account. Please setup a subdomain in order to run the simulator.";
     }
 } else {
-    	return "Unable to call the quick start application [\"/convergia-demo-app/api/ingest\"] api. Failure to load your account subdomain property."
+    return "Unable to call the quick start application [\"/convergia-demo-app/api/ingest\"] api. Failure to load your account subdomain property."
 }
+
+/**
+* Random Value deppending on val
+* 
+* @function getRandomInt
+* @param {String} [val] the value name
+* @return{Number} the generated Random Value
+*
+*/
+function getRandomValue(val) {
+    return getRandomInt(0,100);//TODO Implement Simulation consest data samples
 
 /**
 * Random Int limits included
