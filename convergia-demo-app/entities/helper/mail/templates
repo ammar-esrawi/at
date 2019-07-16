@@ -13,29 +13,29 @@ var _templates = {
   mail: {
       "high_temperature" : {
            "subject": "High Temperature alert for device <%= id %>",
-           "body": "Device: <%= id %><br/>Temperature: <%= temperature%> "
+           "body": "Device: <%= id %>, Temperature: <%= TC%> "
        },
-       "high_luminosity" : {
-           "subject": "High Luminosity alert for device <%= id %>",
-           "body": "Device: <%= id %><br/>Luminosity: <%= luminosity%> "
+      "low_temperature" : {
+           "subject": "Low Temperature alert for device <%= id %>",
+           "body": "Device: <%= id %>, Temperature: <%= TC%> "
        },
-       "high_pressure" : {
-           "subject": "High Pressure alert for device <%= id %>",
-           "body": "Device:<%= id %><br/>Pressure: <%= pressure%> "
+      "low_battery" : {
+           "subject": "Low Battery alert for device <%= id %>",
+           "body": "Device: <%= id %>, Battery: <%= BAT%> "
        }
   },
     log: {
       "high_temperature" : {
            "subject": "High Temperature alert for device <%= id %>",
-           "body": "Device: <%= id %>, Temperature: <%= temperature%> "
+           "body": "Device: <%= id %>, Temperature: <%= TC%> "
        },
-       "high_luminosity" : {
-           "subject": "High Luminosity alert for device <%= id %>",
-           "body": "Device: <%= id %>, Luminosity: <%= luminosity%> "
+      "low_temperature" : {
+           "subject": "Low Temperature alert for device <%= id %>",
+           "body": "Device: <%= id %>, Temperature: <%= TC%> "
        },
-       "high_pressure" : {
-           "subject": "High Pressure alert for device <%= id %>",
-           "body": "Device:<%= id %>, Pressure: <%= pressure%> "
+      "low_battery" : {
+           "subject": "Low Battery alert for device <%= id %>",
+           "body": "Device: <%= id %>, Battery: <%= BAT%> "
        }
   }
 }

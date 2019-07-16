@@ -6,8 +6,8 @@
 
 var email = {
     "TO":  request.account.adminEmail,
-    "FROM": "Multitech asset tracking",
-    "BODY": "Multitech asset tracking Warning."
+    "FROM": "Convergia Demo App",
+    "BODY": "Convergia Demo App Warning."
 }
 
  
