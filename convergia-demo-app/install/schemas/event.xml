@@ -17,6 +17,7 @@
                 <field>STR</field>
                 <field>PRES</field>
                 <field>HUM</field>
+                <field>updated_filed</field>
                 
             </fields>
         </aclGroup>
@@ -42,9 +43,10 @@
         <field name='PLV3' type='numeric'></field>
         <field name='SOIL2' type='numeric'></field>
         <field name='ANE' type='numeric'></field>
-        <field name='STR' type='numeric'></field>
+        <field name='STR' type='string'></field>
         <field name='PRES' type='numeric'></field>
         <field name='HUM' type='numeric'></field>
+        <field name='updated_filed' type='string'></field>
     </fields>
 </schema>
 
