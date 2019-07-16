@@ -37,13 +37,17 @@ if (listSubdomainsResult.metadata && listSubdomainsResult.metadata.status == "su
         var dataSnap =
         {
             "id": randomDevice.id,
+            "id_wasp":"MSK_SA",
+            "id_secret":"696418FDC337DE58",
             
             "location": {
                 "lat": randomDevice.lat,
                 "lon": randomDevice.long
-            }
+            },
+            "sensor":randomValue,
+            "value":getRandomValue(randomValue),
         };
-        dataSnap[randomValue]=getRandomValue(randomValue);
+        
         log.info("Generated Data : " + JSON.stringify(dataSnap));
 
         //Call the ingest api, with randomly generated data

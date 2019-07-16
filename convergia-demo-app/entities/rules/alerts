@@ -21,13 +21,13 @@ var decision = [];
 if(typeof pl != "object") {
   return[];
 } else { 
-	  if((pl != null && pl["TC"] != undefined && pl["TC"] >35) && isAny("BAT")){
+	  if((pl != null && pl["TC"] != undefined && pl["TC"] >35) && isAny("BAT") && (pl != null && pl["updated_filed"] != undefined && pl["updated_filed"] =="TC")){
        decision.push({ "log": "true","email": "high_temperature" });
 	} 
-	  if((pl != null && pl["TC"] != undefined && pl["TC"] <5) && isAny("BAT")){
+	  if((pl != null && pl["TC"] != undefined && pl["TC"] <5) && isAny("BAT") && (pl != null && pl["updated_filed"] != undefined && pl["updated_filed"] =="TC")){
        decision.push({ "log": "true","email": "low_temperature" });
 	} 
-	  if(isAny("TC") && (pl != null && pl["BAT"] != undefined && pl["BAT"] <15)){
+	  if(isAny("TC") && (pl != null && pl["BAT"] != undefined && pl["BAT"] <15) && (pl != null && pl["updated_filed"] != undefined && pl["updated_filed"] =="BAT")){
        decision.push({ "log": "false","email": "low_battery" });
 	} 
 }

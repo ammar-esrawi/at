@@ -28,19 +28,12 @@ try{
     var data = {
         id:requestParams.id,
         id_wasp:requestParams.id_wasp,
-        TC: requestParams.TC,
-        BAT: requestParams.BAT,
-        PLV1: requestParams.PLV1,
-        PLV2: requestParams.PLV2,
-        PLV3: requestParams.PLV3,
-        SOIL2: requestParams.SOIL2,
-        ANE: requestParams.ANE,
-        STR: requestParams.STR,
-        PRES:requestParams.PRES,
-        HUM:requestParams.HUM,
+        id_secret:requestParams.id_secret,
+        updated_filed:requestParams.sensor,
         location:""
 
     }
+    data[requestParams.sensor]=requestParams.value;
     //build valid location if location not empty in params 
     if(isNumeric(requestParams.location.lat) && isNumeric(requestParams.location.lon)){
         data.location=""+parseFloat(requestParams.location.lat).toFixed(4)+ "," +parseFloat(requestParams.location.lon).toFixed(4)
@@ -55,6 +48,7 @@ try{
     //fill missing data from the latest event sent by the device
     data.location=data.location||latestEvent.location;
     data.id_wasp=data.id_wasp||latestEvent.id_wasp||"";
+    data.id_secret=data.id_wasp||latestEvent.id_secret||"";
     data.TC=data.TC||latestEvent.TC||0;
     data.BAT=data.BAT||latestEvent.BAT||0;
     data.PLV1=data.PLV1||latestEvent.PLV1||0;
@@ -62,7 +56,7 @@ try{
     data.PLV3=data.PLV3||latestEvent.PLV3||0;
     data.SOIL2=data.SOIL2||latestEvent.SOIL2||0;
     data.ANE=data.ANE||latestEvent.ANE||0;
-    data.STR=data.STR||latestEvent.STR||0;
+    data.STR=data.STR||latestEvent.STR||"";
     data.PRES=data.PRES||latestEvent.PRES||0;
     data.HUM=data.HUM||latestEvent.HUM||0;
     
