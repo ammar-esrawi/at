@@ -1,5 +1,5 @@
 //angular js initilaizer
-var myApp = angular.module('myApp', ["Layout",  "WsClient", "HttpClient", "Map", "Chart",  "gridster", "Grid",  "Gauge"]);
+var myApp = angular.module('myApp', ["Layout",  "WsClient", "HttpClient", "Map", "Chart",  "gridster", "Grid",  "Gauge", 'Odometer']);
 
 myApp
     .constant("menuItemsJson",  menuItems)
